@@ -1,6 +1,6 @@
 from django import template
 from django.urls import reverse, NoReverseMatch
-from ..models import MenuItem
+from models import MenuItem
 
 register = template.Library()
 

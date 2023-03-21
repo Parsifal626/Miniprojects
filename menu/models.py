@@ -9,8 +9,3 @@ class MenuItem(models.Model):
 
     def str(self):
         return self.label
-
-
-
-
-
