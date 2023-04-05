@@ -4,7 +4,15 @@ from django.http import HttpResponse
 # Create your views here.
 
 def index(request):
-    return HttpResponse("<h2> Главная </h2>")
+    return render(request, "firstapp/home.html")
+    # header = "персональные данные"
+    # langs = ["Английский", "Немецкий", "Испанский"]
+    # user = {"name" : "Максим", "age" : 30 }
+    # addr = ("Виноградная", 23, 45)
+    # data = {"header" : header, "langs": langs, "user": user, "address": addr}
+    #data = {"header": "Передача параметров в шаблон Django",
+     #       "message" : "Загружен шаблон hello/templates/firstapp/index_app1.html "}
+    # return render (request, "index.html", context=data)
 
 
 def about(request):
