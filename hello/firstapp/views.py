@@ -4,7 +4,10 @@ from django.http import HttpResponse
 # Create your views here.
 
 def index(request):
-    return render(request, "firstapp/home.html")
+    # cat = ["Ноутбуки", "Принтеры", "Сканеры", "Диски"]
+    return render(request, "firstapp/index.html"),
+                #   context={"cat": cat})
+
     # header = "персональные данные"
     # langs = ["Английский", "Немецкий", "Испанский"]
     # user = {"name" : "Максим", "age" : 30 }
