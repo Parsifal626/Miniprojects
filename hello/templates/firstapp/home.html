@@ -1,17 +1,14 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
-    <!--Это внутренний стиль-->
-    <style>h1{color: green;}</style>
     <meta charset="UTF-8">
     <title> Привет Джанго!</title>
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
 </head>
 <body>
-    
-    <font style="color:red">
     <h1> Домашняя страница ДЖАНГО!</h1>
-    <font style="color:blue; font-size: 12px"
     <h2> templates/firstapp/index.html </h2>
-
+    <img src="{% static 'images/image1.jpg'%}"
 </body>
 </html>
