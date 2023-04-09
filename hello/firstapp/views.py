@@ -1,10 +1,16 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .forms import UserForm
 
 # Create your views here.
 
 def index(request):
-    return render(request, "firstapp/home.html")
+    userform = UserForm()
+    # cat = ["Ноутбуки", "Принтеры", "Сканеры", "Диски"]
+    return render(request, "firstapp/index.html",
+                  {"form": userform})
+                #   context={"cat": cat})
+
     # header = "персональные данные"
     # langs = ["Английский", "Немецкий", "Испанский"]
     # user = {"name" : "Максим", "age" : 30 }
