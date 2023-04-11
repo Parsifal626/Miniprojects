@@ -1,18 +1,16 @@
-<!-- {% extends "firstapp/base.html" %}
-{% block title %}Index{% endblock title %}
-{% block header %}Главная страница{% endblock header %}
-{% block content %}Связка шаблонов index.html и base.html{% endblock content %}  -->
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8"
     <title> Форма Джанго</title>
 </head>
 <body>
+    <form method="POST">
+        {% csrf_token %}
     <table>
         {{ form }}
     </table>
-
+    <input type="submit" value="Отправить">
+</form>
 </body>
 </html>
