@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Список судебных дел</h1>
+  <ul>
+    {% for judgment in judgments %}
+      <li><a href="{% url 'judgment_detail' judgment.id %}">{{ judgment.title }}</a></li>
+    {% endfor %}
+  </ul>
+{% endblock %}

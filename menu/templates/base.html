@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="{% url 'judgment_list' %}">Судебные дела</a></li>
+        <li><a href="{% url 'add_judgment' %}">Добавить судебное дело</a></li>
+      </ul>
+    </nav>
+    
+    {% block content %}
+    {% endblock %}
+  </body>
+</html>

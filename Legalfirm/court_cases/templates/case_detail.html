@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Дело №{{ case.case_number }} - {{ case.title }}</h1>
+  <p>Дата создания: {{ case.created_at }}</p>
+  <p>Дата обновления: {{ case.updated_at }}</p>
+  <p>Описание: {{ case.description }}</p>
+  <a href="{% url 'case_edit' case.id %}">Редактировать</a>
+{% endblock %}

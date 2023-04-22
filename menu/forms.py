@@ -1,7 +1,7 @@
 from django import forms
-from models import MenuItem
+from .models import Judgment
 
-class MenuItemForm(forms.ModelForm):
+class JudgmentForm(forms.ModelForm):
     class Meta:
-        model = MenuItem
-        fields = ['name', 'parent', 'label', 'url', 'named_url']
+        model = Judgment
+        fields = ['title', 'date', 'court', 'text']
