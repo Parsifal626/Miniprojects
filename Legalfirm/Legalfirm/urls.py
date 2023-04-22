@@ -19,6 +19,6 @@ from django.contrib import admin
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('cases/', include('court_cases.urls')),
+    path('', include('court_cases.urls')),
     # ... другие маршруты
 ]

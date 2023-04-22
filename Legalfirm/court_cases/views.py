@@ -7,7 +7,7 @@ class CaseListView(ListView):
     model = Case
     template_name = 'court_cases/case_list.html'
     context_object_name = 'cases'
-    ordering = ['-date_created']
+    
 
 class CaseDetailView(DetailView):
     model = Case
