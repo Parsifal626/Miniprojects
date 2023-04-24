@@ -18,6 +18,8 @@ class CaseCreateView(CreateView):
     model = Case
     template_name = 'court_cases/case_form.html'
     fields = '__all__'
+    success_url = reverse_lazy('case_list')
+
 
 class CaseUpdateView(UpdateView):
     model = Case
@@ -32,5 +34,6 @@ class CaseDeleteView(DeleteView):
 def search(request):
     if request.method == 'GET':
         query = request.GET.get('q')
-        results = Case.objects.filter(title__icontains=query)
+        results = Case.objects.filter(case_title__icontains=query)
         return render(request, 'court_cases/search_results.html', {'results': results})
+

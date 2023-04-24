@@ -1,12 +1,12 @@
 from django.urls import path
-from .views import CaseListView, CaseDetailView, CaseCreateView, CaseUpdateView, CaseDeleteView
-
-app_name = 'court_cases'
+from .views import CaseListView, CaseDetailView, CaseCreateView, CaseUpdateView, CaseDeleteView, search
 
 urlpatterns = [
+    path('case/new/', CaseCreateView.as_view(), name='case_new'),
     path('', CaseListView.as_view(), name='case_list'),
-    path('<int:pk>/', CaseDetailView.as_view(), name='case_detail'),
-    path('create/', CaseCreateView.as_view(), name='case_create'),
-    path('<int:pk>/update/', CaseUpdateView.as_view(), name='case_update'),
-    path('<int:pk>/delete/', CaseDeleteView.as_view(), name='case_delete'),
+    path('case/<int:pk>/', CaseDetailView.as_view(), name='case_detail'),
+    path('case/new/', CaseCreateView.as_view(), name='case_form'),
+    path('case/<int:pk>/edit/', CaseUpdateView.as_view(), name='case_update'),
+    path('case/<int:pk>/delete/', CaseDeleteView.as_view(), name='case_delete'),
+    path('search/', search, name='search'),
 ]

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="{% url 'case_form' %}">Список дел</a></li>
+        <li><a href="{% url 'case_list' %}">Судебные дела</a></li>
+        <li><a href="{% url 'case_form' %}">Добавить судебное дело</a></li>
+      </ul>
+    </nav>
+    
+    {% block content %}
+    {% endblock %}
+  </body>
+</html>

@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django.urls import reverse
 
 class Case(models.Model):
     case_number = models.CharField(max_length=50)
@@ -8,6 +9,10 @@ class Case(models.Model):
     date_filed = models.DateTimeField(default=timezone.now)
     court = models.CharField(max_length=50)
     status = models.CharField(max_length=50)
+
+    def get_absolute_url(self):
+        return reverse('case_detail', kwargs={'pk': self.pk})
+        
 
     def __str__(self):
         return self.case_title

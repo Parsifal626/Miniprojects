@@ -19,7 +19,7 @@
           <td>{{ case.title }}</td>
           <td>{{ case.created_at }}</td>
           <td>{{ case.updated_at }}</td>
-          <td><a href="{% url 'case_detail' case.id %}">Просмотреть</a></td>
+          <td><a href="{% url 'case_list' %}">Просмотреть</a></td>
         </tr>
       {% empty %}
         <tr>
