@@ -1,5 +1,6 @@
 import telebot
 from telebot.types import Message
+from task1 import circle
 
 bot = telebot.TeleBot('6247252845:AAEIkzgPmySjLfcq_hdDMfIzCvcnajxmEc4')
 
@@ -9,14 +10,12 @@ def start_handler(message: Message):
 
 @bot.message_handler(regexp="Круг радиусом (\d+)")
 def circle_handler(message: Message):
-   radius = int(message.txt.split()[-1])
-   circle = Circle(radius)
+   radius = int(message.text.split()[-1])
+   circle = circle(radius)
    area = circle.area()
    bot.send_message(message.chat.id, f'Площадь круга: {area}') 
 
-@bot.exception_handler(Exception)
-def error_handler(e):
-    print(e)
+
 
 if __name__ == '__main__':
     bot.polling(none_stop=True)
