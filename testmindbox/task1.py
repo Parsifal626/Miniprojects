@@ -50,7 +50,7 @@ def triangle(update, context):
 
 # Создание объекта Updater и добавление обработчиков команд бота
 def main():
-    updater = Updater(token='6247252845:AAEIkzgPmySjLfcq_hdDMfIzCvcnajxmEc4', use_context=True)
+    updater = Updater(token='', use_context=True)
     dispatcher = updater.dispatcher
     dispatcher.add_handler(CommandHandler('start', start))
     dispatcher.add_handler(CommandHandler('circle', circle))
