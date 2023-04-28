@@ -25,7 +25,7 @@ for page_num in range(num_pages):
     pdf_writer.add_page(page)
 
     # Определяем путь к файлу, куда будем сохранять текущую страницу
-    output_file_path = os.path.splitext(input_pdf_path)[0] + '_page{}.pdf'.format(page_num+1)
+    output_file_path = os.path.splitext(input_pdf_path)[0] +'_page{page_num+1}.pdf')
 
     # Создаем файл и записываем в него текущую страницу
     with open(output_file_path, 'wb') as output_file:

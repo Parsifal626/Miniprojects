@@ -3,7 +3,7 @@ from telebot.types import Message
 from task import Circle
 
 
-bot = telebot.TeleBot('')
+bot = telebot.TeleBot('6247252845:AAEIkzgPmySjLfcq_hdDMfIzCvcnajxmEc4')
 
 @bot.message_handler(commands=['start'])
 def start_handler(message: Message):
