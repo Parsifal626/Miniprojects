@@ -49,7 +49,7 @@ class Book(models.Model):
                              help_text="Введите название книги",
                              verbose_name="Название книги")
     genre = models.ForeignKey("Genre", on_delete=models.CASCADE,
-                              help_text="ВЫберите Жанр книги",
+                              help_text="Выберите Жанр книги",
                               verbose_name="Жанр книги", null=True)
     language = models.ForeignKey("Language", on_delete=models.CASCADE,
                                  help_text="Выберите язык книги",
@@ -65,6 +65,10 @@ class Book(models.Model):
                             verbose_name= "ISBN книги")
     def __str__(self):
         return self.title
+    def display_author(self):
+        return ', '.join([author.last_name for author in
+                          self.author.all()])
+    display_author.short_description = "Авторы"
     
 class Status(models.Model):
     name= models.CharField(max_length=20,
@@ -81,11 +85,11 @@ class BookInstance(models.Model):
                                verbose_name="Инвентарный номер")
     imprint = models.CharField(max_length=200,
                                help_text="Введите издательство книги",
-                               verbose_name="Инвентарный номер")
+                               verbose_name="Издательство")
     status= models.ForeignKey("Status", on_delete=models.CASCADE,
                               null = True,
                               help_text="Изменить состояние экемпляра",
-                              verbose_name="Издательство")
+                              verbose_name="Статус экземпляра книги")
     due_back = models.DateField(null=True, blank=True,
                                 help_text = "Введите конец срока статуса",
                                 verbose_name="Дата окончания статуса")

@@ -131,7 +131,7 @@ class Migration(migrations.Migration):
                     models.CharField(
                         help_text="Введите издательство книги",
                         max_length=200,
-                        verbose_name="Инвентарный номер",
+                        verbose_name="Издательство",
                     ),
                 ),
                 (
