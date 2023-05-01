@@ -43,6 +43,9 @@ class Author(models.Model):
                                      null=True, blank=True)
     def __str__(self):
         return self.last_name
+    
+    def get_absolute_url_author(self):
+        return reverse("author_detail", args=[str(self.id)])
 
 class Book(models.Model):
     title = models.CharField(max_length=200,
@@ -65,10 +68,15 @@ class Book(models.Model):
                             verbose_name= "ISBN книги")
     def __str__(self):
         return self.title
+    
     def display_author(self):
         return ', '.join([author.last_name for author in
                           self.author.all()])
     display_author.short_description = "Авторы"
+    
+    def get_absolute_url(self):
+        return reverse("book_detail", args=[str(self.id)])
+
     
 class Status(models.Model):
     name= models.CharField(max_length=20,
@@ -97,8 +105,7 @@ class BookInstance(models.Model):
         return "%s %s %s" % (self.inv_nom, self.book, self.status)
     
 
-def get_absolute_url(self):
-    return reverse("book-detail", args=[str(self.id)])
+
 
 # def __str__(self):
 #     return self.field_name
